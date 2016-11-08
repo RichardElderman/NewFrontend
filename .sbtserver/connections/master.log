@@ -1,0 +1,40 @@
+New log file opened at Tue Nov 08 22:54:32 CET 2016 by 7876@Richard
+Taking next connection to: 56411
+New client attempting to connect on port: 56412-56411
+  Address = /192.168.2.6:56411
+This client on port 56412 has uuid b9a4c6c2-d959-44d1-9458-22fba5b5039a configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-b9a4c6c2-d959-44d1-9458-22fba5b5039a
+Taking next connection to: 56411
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56411
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56411
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56411
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56411
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56411
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56411
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56411
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56411
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56411
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 7876@Richard logs at Tue Nov 08 23:24:33 CET 2016, goodbye.
