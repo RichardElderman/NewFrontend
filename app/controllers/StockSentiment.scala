@@ -3,7 +3,7 @@ package controllers
 import javax.inject._
 
 import play.api.Configuration
-import play.api.libs.json.{JsObject, JsString, JsValue, Json}
+import play.api.libs.json._
 import play.api.libs.ws._
 import play.api.mvc._
 import play.api.libs.json._
@@ -16,15 +16,12 @@ import play.modules.reactivemongo.MongoController
 import play.modules.reactivemongo.json.collection.JSONCollection
 import play.modules.reactivemongo._
 import reactivemongo.api.ReadPreference
+import play.modules.reactivemongo.json._, ImplicitBSONHandlers._
 
 @Singleton
-class StockSentiment @Inject()(ws: WSClient, configuration: Configuration) extends Controller with MongoController {
+class StockSentiment @Inject()(ws: WSClient) extends Controller with MongoController {
 
   private val logger = org.slf4j.LoggerFactory.getLogger(this.getClass)
-
-  private val sentimentUrl = configuration.getString("sentiment.url").get
-
-  private val tweetUrl = configuration.getString("tweet.url").get
 
   case class tweet(text: String, name: String)
   
@@ -36,9 +33,12 @@ class StockSentiment @Inject()(ws: WSClient, configuration: Configuration) exten
     )
   }
   
-  // ############################################################################################
+  private var tweetArray : Future[JsArray] = findTweets
+
+  // mongodb collection
+  def collection: JSONCollection = db.collection[JSONCollection]("tweets")
   
-    // RABBITMQ ##############################################
+  // RABBITMQ ##############################################
   import akka.actor.ActorSystem
   import akka.actor.ActorRef
 
@@ -55,6 +55,7 @@ class StockSentiment @Inject()(ws: WSClient, configuration: Configuration) exten
       override def handleDelivery(consumerTag: String, envelope: Envelope, properties: BasicProperties, body: Array[Byte]) {
         println("received: " + fromBytes(body))
         tweetArray = findTweets
+        // send websocket message here
       }
     }
     channel.basicConsume(queue, true, consumer)
@@ -73,29 +74,6 @@ class StockSentiment @Inject()(ws: WSClient, configuration: Configuration) exten
   def toBytes(x: Long) = x.toString.getBytes("UTF-8")
   // END RABBITMQ ############################################
   
-  // ######################### TWITTERDINGEN
-  
- 
-  
-  private var tweetArray : Future[JsArray] = findTweets
-
-  // mongodb collection
-  def collection: JSONCollection = db.collection[JSONCollection]("tweets")
-  //def collection: Future[JSONCollection] = db.map(_.collection[JSONCollection]("tweets"))
-  
-  // find newest tweets in mongodb and store them in array
-  /*def findTweets : Future[List[tweet]] = {
-    // let's do our query
-    val futureTweetsList: Future[List[tweet]] = collection.flatMap {
-      // find all tweets
-      _.find(Json.obj()).
-      // perform the query and get a cursor of JsObject
-      cursor[tweet](ReadPreference.primary).
-      // Collect the results as a list
-      collect[List]()
-    }
-    return futureTweetsList
-  }*/
     // return array containing latest tweets
   def getNewTweets = Action.async{
     tweetArray.map {
@@ -103,7 +81,6 @@ class StockSentiment @Inject()(ws: WSClient, configuration: Configuration) exten
         Ok(Json.toJson(tweets))
     }
   }
-  
    
      // find newest tweets in mongodb and store them in array
   def findTweets : Future[JsArray] = {
@@ -112,20 +89,20 @@ class StockSentiment @Inject()(ws: WSClient, configuration: Configuration) exten
       // find all
       find(Json.obj()).
       // perform the query and get a cursor of JsObject
-      cursor[tweet]
+      cursor[tweet](ReadPreference.primary)
 
     // gather all the JsObjects in a list
     val futureTweetsList: Future[List[tweet]] = cursor.collect[List]()
 
     // return list transformed into a JsArray
     return futureTweetsList.map { tweets =>
-      Json.toJson(tweets)
+      Json.arr(tweets)
     }
   }
   
   // ############################################################################################
 
-  def get(symbol: String): Action[AnyContent] = Action.async {
+  /*def get(symbol: String): Action[AnyContent] = Action.async {
     logger.info(s"getting stock sentiment for $symbol")
 
     val futureStockSentiments: Future[Result] = for {
@@ -191,6 +168,6 @@ class StockSentiment @Inject()(ws: WSClient, configuration: Configuration) exten
     logger.info(s"response = $r")
 
     r
-  }
+  }*/
 
 }

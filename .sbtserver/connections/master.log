@@ -1,40 +1,101 @@
-New log file opened at Tue Nov 08 22:54:32 CET 2016 by 7876@Richard
-Taking next connection to: 56411
-New client attempting to connect on port: 56412-56411
-  Address = /192.168.2.6:56411
-This client on port 56412 has uuid b9a4c6c2-d959-44d1-9458-22fba5b5039a configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-b9a4c6c2-d959-44d1-9458-22fba5b5039a
-Taking next connection to: 56411
+New log file opened at Wed Nov 09 23:40:20 CET 2016 by 10888@Richard
+Taking next connection to: 63934
+New client attempting to connect on port: 64041-63934
+  Address = /192.168.2.6:63934
+Handshake exception on socket: 64041
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 63934
+New client attempting to connect on port: 64042-63934
+  Address = /192.168.2.6:63934
+This client on port 64042 has uuid 33828977-bae6-44ae-8471-9fd2bf53f374 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-33828977-bae6-44ae-8471-9fd2bf53f374
+Taking next connection to: 63934
+New client attempting to connect on port: 64067-63934
+  Address = /192.168.2.6:63934
+Handshake exception on socket: 64067
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 63934
+New client attempting to connect on port: 64068-63934
+  Address = /192.168.2.6:63934
+This client on port 64068 has uuid 78a48f95-1978-4a72-8912-ffdef0785927 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-33828977-bae6-44ae-8471-9fd2bf53f374, activator-78a48f95-1978-4a72-8912-ffdef0785927
+Taking next connection to: 63934
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56411
+Taking next connection to: 63934
+New client attempting to connect on port: 64141-63934
+  Address = /192.168.2.6:63934
+Handshake exception on socket: 64141
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 63934
+New client attempting to connect on port: 64142-63934
+  Address = /192.168.2.6:63934
+This client on port 64142 has uuid 04cd1d37-5f79-4f37-a6d3-d74c9411b753 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-78a48f95-1978-4a72-8912-ffdef0785927, play-fork-run-04cd1d37-5f79-4f37-a6d3-d74c9411b753
+Taking next connection to: 63934
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56411
+Taking next connection to: 63934
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56411
+Taking next connection to: 63934
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56411
+Taking next connection to: 63934
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56411
+Taking next connection to: 63934
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56411
+Taking next connection to: 63934
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56411
+Taking next connection to: 63934
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56411
+Taking next connection to: 63934
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56411
-Checking to see if clients are empty...
-No non-daemon clients connected after 3 min. Shutting down.
-Server socket thread exiting.
-0 clients open, will close them...
-All client sockets have been closed.
-Closing the 7876@Richard logs at Tue Nov 08 23:24:33 CET 2016, goodbye.
+Taking next connection to: 63934

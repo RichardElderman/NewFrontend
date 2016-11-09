@@ -19,11 +19,11 @@ lazy val akkaVersion = "2.4.11"
 libraryDependencies += "com.typesafe.akka" %% "akka-testkit" % akkaVersion % Test
 libraryDependencies += "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % Test
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
-libraryDependencies += "org.reactivemongo" %% "play2-reactivemongo" % "0.10.5.0.akka23"
 libraryDependencies += "com.thenewmotion.akka" %% "akka-rabbitmq" % "2.3"
 libraryDependencies += "org.json4s" %% "json4s-native" % "3.3.0"
-//libraryDependencies += 
-//libraryDependencies += 
+libraryDependencies +=  "com.typesafe.play" %% "play" % "2.5.9"
+libraryDependencies +=  "com.typesafe.play" %% "play-test" % "2.5.9"
+libraryDependencies += "org.reactivemongo" %% "play2-reactivemongo" % "0.11.0.play23"
 
 fork in run := true
 

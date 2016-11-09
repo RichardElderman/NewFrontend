@@ -1,0 +1,9 @@
+New log file opened at Wed Nov 09 23:42:08 CET 2016 by 10888@Richard
+Sending msg to client activator-33828977-bae6-44ae-8471-9fd2bf53f374: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\Richard\Desktop\newPlayFW\play-websocket-scala-master\.sbtserver\connections\master.log))
+Sending msg to client activator-33828977-bae6-44ae-8471-9fd2bf53f374: DetachedLogEvent(LogMessage(debug,sbt client logs are in: C:\Users\Richard\Desktop\newPlayFW\play-websocket-scala-master\.sbtserver\connections\activator-33828977-bae6-44ae-8471-9fd2bf53f374.log))
+Reading next message from client.
+Sending msg to client activator-33828977-bae6-44ae-8471-9fd2bf53f374: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: C:\Users\Richard\Desktop\newPlayFW\play-websocket-scala-master\.sbtserver\master.log))
+Client activator-33828977-bae6-44ae-8471-9fd2bf53f374 EOF, shutting down.
+Stopping client.
+Client activator-33828977-bae6-44ae-8471-9fd2bf53f374 thread exiting.
+Dropping message (0,ReceivedResponse()) to dead client activator-33828977-bae6-44ae-8471-9fd2bf53f374

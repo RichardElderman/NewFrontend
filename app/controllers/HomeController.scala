@@ -40,29 +40,6 @@ class HomeController @Inject()(@Named("stocksActor") stocksActor: ActorRef,
     Ok(views.html.index())
   }
   
-  /*
-     // find newest tweets in mongodb and store them in array
-  def findTweets : Future[JsArray] = {
-    // let's do our query
-    val cursor: Cursor[tweet] = collection.
-      // find all
-      find(Json.obj()).
-      // sort them by creation date
-      //sort(Json.obj("count" -> -1)).
-      // perform the query and get a cursor of JsObject
-      cursor[tweet]
-
-    // gather all the JsObjects in a list
-    val futureTweetsList: Future[List[tweet]] = cursor.collect[List]()
-
-    // return list transformed into a JsArray...
-    return futureTweetsList.map { tweets =>
-      Json.arr(tweets)
-    }
-  }*/
-  
-  
-  //############################################### ANDERE DINGEN
   /**
    * Creates a websocket.  `acceptOrResult` is preferable here because it returns a
    * Future[Flow], which is required internally.
